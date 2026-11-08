@@ -469,7 +469,7 @@ document.querySelectorAll(".app-card").forEach(card => {
 card.style.cursor = "pointer";
 
 card.onclick = function() {
-let name = card.querySelector("h3").innerText;
+   let name = card.querySelector("h3").innerText;
 let icon = card.querySelector("img").src;
 
 document.getElementById("appContent").innerHTML = `
@@ -488,6 +488,88 @@ function closeApp() {
 document.getElementById("appModal").style.display = "none";
 }
 </script>
+<section class="ipa-section">
 
-</body>
+<h2>📥 IPA Downloads</h2>
+<p>Приложения для iPhone и iPad</p>
+
+<div class="ipa-card">
+  <div class="ipa-icon">📱</div>
+  <div>
+    <h3>Instagram IPA</h3>
+    <p>Social Media • iOS</p>
+  </div>
+  <button disabled>Скоро</button>
+</div>
+
+<div class="ipa-card">
+  <div class="ipa-icon">✈️</div>
+  <div>
+    <h3>Telegram IPA</h3>
+    <p>Messenger • iOS</p>
+  </div>
+  <button disabled>Скоро</button>
+</div>
+
+<div class="ipa-card">
+  <div class="ipa-icon">▶️</div>
+  <div>
+    <h3>YouTube IPA</h3>
+    <p>Video • iOS</p>
+  </div>
+  <button disabled>Скоро</button>
+</div>
+
+</section>
+
+<style>
+.ipa-section {
+  background: #0b0815;
+  color: white;
+  padding: 25px 15px;
+  font-family: Arial;
+}
+
+.ipa-section h2 {
+  color: #c77dff;
+}
+
+.ipa-section > p {
+  color: #aaa;
+}
+
+.ipa-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(145deg,#211536,#110d20);
+  border: 1px solid #7135ad;
+  border-radius: 17px;
+  padding: 15px;
+  margin: 15px 0;
+}
+
+.ipa-icon {
+  font-size: 35px;
+}
+
+.ipa-card h3 {
+  font-size: 15px;
+}
+
+.ipa-card p {
+  color: #aaa;
+  font-size: 12px;
+}
+
+.ipa-card button {
+  margin-left: auto;
+  background: #7135ad;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+}
+</style>
+     </body>
 </html>
