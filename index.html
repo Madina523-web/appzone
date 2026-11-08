@@ -571,5 +571,31 @@ document.getElementById("appModal").style.display = "none";
   padding: 10px;
 }
 </style>
-     </body>
+     <script>
+document.getElementById("appSearch").addEventListener("input", function() {
+  let search = this.value.toLowerCase();
+
+  document.querySelectorAll(".app-card").forEach(card => {
+    let name = card.querySelector("h3").innerText.toLowerCase();
+
+    card.style.display = name.includes(search) ? "" : "none";
+  });
+});
+</script>
+</body>
+    <input
+  type="text"
+  id="appSearch"
+  placeholder="🔎 Поиск приложений..."
+  style="
+    width:100%;
+    padding:15px;
+    box-sizing:border-box;
+    border-radius:15px;
+    border:1px solid #913cff;
+    background:#211536;
+    color:white;
+    font-size:16px;
+    margin-bottom:20px;
+">
 </html>
