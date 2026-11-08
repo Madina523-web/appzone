@@ -582,6 +582,97 @@ document.getElementById("appSearch").addEventListener("input", function() {
   });
 });
 </script>
+<section class="rating-section">
+  <h2>⭐ Оцените приложения</h2>
+
+  <div class="rating-app">
+    <h3>Instagram</h3>
+    <div class="stars" data-app="Instagram"> 
+      <button>★</button><button>★</button>
+      <button>★</button><button>★</button>
+      <button>★</button>
+    </div>
+  </div>
+
+  <div class="rating-app">
+    <h3>Telegram</h3>
+    <div class="stars" data-app="Telegram">
+      <button>★</button><button>★</button>
+      <button>★</button><button>★</button>
+      <button>★</button>
+    </div>
+  </div>
+
+  <div class="rating-app">
+    <h3>YouTube</h3>
+    <div class="stars" data-app="YouTube">
+      <button>★</button><button>★</button>
+      <button>★</button><button>★</button>
+      <button>★</button>
+    </div>
+  </div>
+</section>
+
+<style>
+.rating-section {
+  background: #0b0815;
+  color: white;
+  padding: 25px;
+  font-family: Arial;
+}
+
+.rating-section h2 {
+  color: #c77dff;
+}
+
+.rating-app {
+  background: #211536;
+  padding: 15px;
+  margin: 12px 0;
+  border-radius: 15px;
+}
+
+.stars button {
+  background: none;
+  border: none;
+  color: #777;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.stars button.active {
+  color: #c77dff;
+}
+</style>
+
+<script>
+document.querySelectorAll(".stars").forEach(group => {
+  const buttons = group.querySelectorAll("button");
+
+  buttons.forEach((button, index) => {
+    button.onclick = () => {
+      buttons.forEach((star, i) => {
+        star.classList.toggle("active", i <= index);
+      });
+
+      localStorage.setItem(
+        "rating_" + group.dataset.app,
+        index + 1
+      );
+    };
+  });
+
+  const saved = localStorage.getItem(
+    "rating_" + group.dataset.app
+  );
+
+  if (saved) {
+    buttons.forEach((star, i) => {
+      star.classList.toggle("active", i < Number(saved));
+    });
+  }
+});
+</script>
 </body>
     <input
   type="text"
