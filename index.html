@@ -6,10 +6,52 @@
 <title>AppZone — App Store</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.apps {
+  padding: 25px 15px;
+  color: white;
+  font-family: Arial;
+  background: #0b0815;
+}
+
+.apps h2 {
+  color: #b56aff;
+  margin-bottom: 20px;
+}
+
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.app-card {
+  background: linear-gradient(145deg, #211536, #110d20);
+  border: 1px solid #7135ad;
+  border-radius: 20px;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 0 15px #7826ad33;
+}
+
+.app-card img {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  border-radius: 15px;
+}
+
+.app-card h3 {
+  color: white;
+}
+
+.app-card p {
+  color: #b9a5d3;
+  font-size: 13px;
+}
+
+.app-card span {
+  color: #c77dff;
 }
 
 body {
