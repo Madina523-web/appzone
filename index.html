@@ -388,5 +388,64 @@ document.querySelectorAll(".download").forEach(button => {
   color: gold;
 }
 </style>
+
+<div id="appModal" style="
+display:none;
+position:fixed;
+inset:0;
+background:#111;
+color:white;
+z-index:9999;
+padding:30px 20px;
+font-family:Arial;
+text-align:center;
+">
+
+<button onclick="closeApp()" style="
+float:right;
+background:#333;
+color:white;
+border:0;
+padding:12px 20px;
+border-radius:10px;">
+✕ Закрыть
+</button>
+
+<div id="appContent" style="padding-top:70px;"></div>
+
+</div>
+
+<script>
+const appInfo = {
+"Instagram": "Социальная сеть для фотографий и видео.",
+"Telegram": "Быстрый и безопасный мессенджер.",
+"YouTube": "Платформа для просмотра видео.",
+"TikTok": "Платформа коротких видео."
+};
+
+document.querySelectorAll(".app-card").forEach(card => {
+card.style.cursor = "pointer";
+
+card.onclick = function() {
+let name = card.querySelector("h3").innerText;
+let icon = card.querySelector("img").src;
+
+document.getElementById("appContent").innerHTML = `
+<img src="${icon}" width="100">
+<h1>${name}</h1>
+<p>${appInfo[name]}</p>
+<h2>⭐ 4.9 / 5</h2>
+<p>Добро пожаловать в AppZone!</p>
+`;
+
+document.getElementById("appModal").style.display = "block";
+};
+});
+
+function closeApp() {
+document.getElementById("appModal").style.display = "none";
+}
+</script>
+
 </body>
 </html>
